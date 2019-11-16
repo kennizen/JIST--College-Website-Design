@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Information Register Form</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/stu-info-show.css' %}">
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logo1.png' %}" alt="logo">
+      <h1 class="logo-name">Jist</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="\" class="nav-link"> Home </a>
+        </li>
+        <li class="nav-item dropdown ">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Administration </a>
+          <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
+              <!-- {% if Data %}
+              <a href="notice-1/{{Data}}" class="dropdown-item">Notice</a>
+              {% else %}
+              <a href="notice-2" class="dropdown-item">Notice</a>
+              {% endif %} -->
+              <a href="notice-2" class="dropdown-item">Notice</a>
+            <a href="#" class="dropdown-item">Board of Governors</a>
+            <a href="#" class="dropdown-item">Office Staff</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="mega-one" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Department </a>
+          <div id="department" class="dropdown-menu  mega-menu" aria-labelledby="mega-one">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <h4>B.Sc</h4>
+                <a href="#" class="dropdown-item">Physics Dept.</a>
+                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                <a href="#" class="dropdown-item">Mathematics Dept.</a>
+                <a href="#" class="dropdown-item">IT</a>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4>Engineering</h4>
+                <a href="#" class="dropdown-item">Civil</a>
+                <a href="#" class="dropdown-item">Etc</a>
+                <a href="#" class="dropdown-item">Mechanical</a>
+                <a href="#" class="dropdown-item">PE and I</a>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4>M.Sc</h4>
+                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                <a href="#" class="dropdown-item">Mathematics</a>
+                <a href="#" class="dropdown-item">Physics</a>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4 class="humanities"><a href="#">Humanities</a></h4>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Facilities </a>
+          <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
+            <a href="#" class="dropdown-item">Library</a>
+            <a href="#" class="dropdown-item">Hostel</a>
+            <a href="#" class="dropdown-item">Bus</a>
+            <a href="#" class="dropdown-item">Internet</a>
+            <a href="#" class="dropdown-item">Guest House</a>
+            <a href="#" class="dropdown-item">Health Center</a>
+            <a href="#" class="dropdown-item">Image Gallery</a>
+            <a href="#" class="dropdown-item">JIST Women Cell</a>
+            <a href="#" class="dropdown-item">JIST Electronic Hobby Club</a>
+          </div>
+        </li>
+        {% if Data %}
+        <li class="nav-item">
+          <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="login" class="nav-link"> Stu-Info </a>
+        </li>
+        {% endif %}
+        {% if name %}
+        <li class="nav-item">
+          <a href="\" class="nav-link logout-btn"> Logout </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="login" class="nav-link login-btn"> Login </a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+
+  </nav>
+  <!-- student information show -->
+
+  <div class="container head">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="heading">Your Details</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="container details-con">
+    <div class="row">
+      {% for names in name %}
+      <div class="col-md-6">
+        <label for="name" class="stu-info-label">First Name : </label>  <label class="stu-info">{{names.first_name}}</label>      
+      </div>
+      <div class="col-md-6">
+        <label for="name" class="stu-info-label">Last Name : </label>  <label class="stu-info">{{names.last_name}}</label>       
+      </div>
+      <div class="col-md-6">
+        <label for="name" class="stu-info-label">Gaurdian Name : </label>  <label class="stu-info">{{names.guardian_name}}</label>    
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="stu-info-label">Phone No : </label>  <label class="stu-info">{{names.phone_no}}</label>       
+      </div>
+      <div class="col-md-6">
+        <label for="age" class="stu-info-label">Age : </label>   <label class="stu-info">{{names.age}}</label>              
+      </div>
+      <div class="col-md-6">
+        <label for="caste" class="stu-info-label">Caste : </label>  <label class="stu-info">{{names.caste}}</label>          
+      </div>
+      <div class="col-md-6">
+        <label for="nationality" class="stu-info-label">Nationality : </label> <label class="stu-info">{{names.nationality}}</label>
+      </div>
+      <div class="col-md-6">
+        <label for="gender" class="stu-info-label">Gender : </label>  <label class="stu-info">{{names.gender}}</label>         
+      </div>
+      <div class="col-md-12">
+        <label for="address" class="stu-info-label">Address : </label>  <label class="stu-info">{{names.address}}</label>       
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container foot">
+    <div class="row">
+      <div class="col-md-12 foot-status">
+        {% if status %}
+        <label class="status">Your Status : </label> <label class="status-value-app">Details Matching <i class="fas fa-check"></i></label>
+        <label>( Your details submitted to college administration matches. )</label> 
+        {% else %}
+        <label class="status">Your Status : </label> <label class="status-value-napp">Details Not Matching <i class="fas fa-exclamation"></i></label>
+        <label>( Your details submitted to college administration doesn't match. )</label>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!--- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-one">
+            <h3>Contact Us</h3>
+            <hr>
+            <p><a href="#"><i class="fas fa-map-marked-alt"></i>Sotai, Chenijan, Jorhat, (Assam), India, 785010</a></p>
+            <p><a href="#"><i class="fas fa-phone-alt"></i>0376-2395369</a></p>
+            <p><a href="#"><i class="far fa-envelope"></i>principaljist@gmail.com</a></p>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-two">
+            <h3>Quick Links</h3>
+            <hr>
+            <ul>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>AICTE</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>Grievance Cell</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>NAAC</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>Anti Ragging</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-three">
+            <h3>Follow Us</h3>
+            <hr>
+            <p>Follow us on social media to stay updated.</p>
+            <a href="#" class="social-icons"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-youtube"></i></a>
+            <h1>Web Admin :</h1>
+            <a href="#">prachurjyagogoi123@gmail.com</a>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-four">
+            <h3>Feedback</h3>
+            <hr>
+            <p>This will help us to develop ourselves.</p>
+            <form action="feedback" method="POST">
+              {% csrf_token %}
+              <label for="name">Name :</label><br>
+              <input type="text" name="name" placeholder="Name"><br>
+              <label for="feedback">Feedback :</label><br>
+              <input type="text" name="feedback" placeholder="Your Feedback"><br>
+              {% if name %}
+              <input type="submit" value="send & logout">
+              {% else %}
+              <input type="submit" value="send">
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom-text">All Rights reserved by &copy;Paper Arts Studios(2019)</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+
+</html>

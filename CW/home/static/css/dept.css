@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+body{
+    overflow-x: hidden;
+    font-family: 'Poppins';
+    background: rgba(224, 224, 224, 1.0)
+}
+
+.dept-head h1{
+    margin-top: 140px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dept-head hr{
+    background: rgba(0, 176, 255, 1);
+    width: 100px;
+    height: 2px;
+    margin: 20px auto 70px auto;
+    border-radius: 15px;
+}
+
+.about-dept-con{
+    background: rgba(245, 245, 245, 1.0);
+    box-shadow: 5px 5px 20px #212121;
+    padding: 50px;
+}
+
+.about-head h1{
+    
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-head hr{
+    background: rgba(0, 176, 255, 1);
+    width: 100px;
+    height: 2px;
+    margin: 20px auto 30px auto;
+    border-radius: 15px;
+}
+
+
+.about-para p{
+    font-size: 17px;
+    margin: 0;
+}
+
+.teacher-head h1{
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 90px;
+}
+
+.teacher-head hr{
+    background: rgba(0, 176, 255, 1);
+    width: 100px;
+    height: 2px;
+    margin: 20px auto 40px auto;
+    border-radius: 15px;
+}
+
+.teacher-details{
+    background: rgba(245, 245, 245, 1.0);
+    box-shadow: 5px 5px 20px #212121;
+    margin: 20px auto 40px auto;
+    padding: 40px;
+}
+
+.teacher-info{
+    padding: 0;
+}
+
+.teacher-info p{
+    margin: 5px;
+    padding: 10px 0px;
+}
+
+.teacher-img{
+    text-align: center;
+    padding: 0;
+    
+}
+
+.teacher-img p{
+    margin: 0;
+    padding: 10px;
+}
+
+.teacher-img img{
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus{
+    font-size: 30px;
+    padding: 0px 25px;
+}
+
+.fa-facebook{
+    color: #757575;
+    transition: .3s;
+}
+
+.fa-twitter{
+    color: #757575;
+    transition: .3s;
+}
+
+.fa-google-plus{
+    color: #757575;
+    transition: .3s;
+}
+
+.fa-facebook:hover{
+    color: rgba(59,89,152,1);
+}
+
+.fa-twitter:hover{
+    color: #00acee;
+}
+
+.fa-google-plus:hover{
+    color: rgba(221, 75, 57,1);
+}
+
+
+.label{
+    font-size: 18px;
+    font-weight: 500;
+    border-left: 2px solid rgba(0, 176, 255, 1);
+    padding-left: 10px;
+    margin: 0;
+}
+
+.label-info{
+    margin: 0;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+
+footer{
+    margin-top: 100px;
+}
+

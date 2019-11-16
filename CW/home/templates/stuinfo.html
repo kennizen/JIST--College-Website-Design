@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/stuinfo.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <form action="{{name}}" class="login-form" method="POST">
+        {% csrf_token %}
+        <h1>Student Registration Form</h1>
+
+        <div class="name-container">
+            <div class="txtb">
+                <input type="text" name="first_name">
+                <span data-placeholder="First name"></span>
+            </div>
+
+            <div class="txtb">
+                <input type="text" name="last_name">
+                <span data-placeholder="Last name"></span>
+            </div>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="guardian_name">
+            <span data-placeholder="Guardian name"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="phone_no">
+            <span data-placeholder="PhoneNo. (10 digit)"></span>
+        </div>
+
+        <div class="txtb">
+            <textarea cols="50" rows="2" name="address"></textarea>
+            <span data-placeholder="Address"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="email" name="email">
+            <span data-placeholder="Email"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="age">
+            <span data-placeholder="Age"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="caste">
+            <span data-placeholder="Caste"></span>
+        </div>
+
+
+        <div class="txtb">
+            <input type="text" name="nationality">
+            <span data-placeholder="Nationality"></span>
+        </div>
+
+
+        <div class="gender">
+            <label for="">Gender</label>
+            <input type="radio" name="gender" value="Male" class="male"> Male
+            <input type="radio" name="gender" value="Female" class="female"> Female
+            <input type="radio" name="gender" value="Others" class="others"> Others
+        </div>
+
+
+        <input type="submit" class="logbtn" value="Submit">
+
+
+
+    </form>
+
+
+    <script type="text/javascript">
+        $(".txtb input,textarea").on("focus", function () {
+            $(this).addClass("focus");
+        });
+
+        $(".txtb input,textarea").on("blur", function () {
+            if ($(this).val() == "")
+                $(this).removeClass("focus");
+        });
+    </script>
+
+
+</body>
+
+</html>

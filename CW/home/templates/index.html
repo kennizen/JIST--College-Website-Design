@@ -1,0 +1,464 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index</title>
+  <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
+
+  <!-- <script src="https://kit.fontawesome.com/f8a811b981.js"></script> -->
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logo1.png' %}" alt="logo">
+      <h1 class="logo-name">Jist</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="\" class="nav-link"> Home </a>
+        </li>
+        <li class="nav-item dropdown ">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Administration </a>
+          <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
+            {% if Data %}
+            <a href="notice-1/{{Data}}" class="dropdown-item">Notice</a>
+            {% else %}
+            <a href="notice-2" class="dropdown-item">Notice</a>
+            {% endif %}
+            <a href="#" class="dropdown-item">Board of Governors</a>
+            <a href="#" class="dropdown-item">Office Staff</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="mega-one" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Department </a>
+          <div id="department" class="dropdown-menu  mega-menu" aria-labelledby="mega-one">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <h4>B.Sc</h4>
+                <a href="#" class="dropdown-item">Physics Dept.</a>
+                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                <a href="#" class="dropdown-item">Mathematics Dept.</a>
+                {% if Data %}
+                <a href="dept-IT-1/{{Data}}" class="dropdown-item">IT</a>
+                {% else %}
+                <a href="dept-IT-2" class="dropdown-item">IT</a>
+                {% endif %}
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4>Engineering</h4>
+                <a href="#" class="dropdown-item">Civil</a>
+                <a href="#" class="dropdown-item">Etc</a>
+                <a href="#" class="dropdown-item">Mechanical</a>
+                <a href="#" class="dropdown-item">PE and I</a>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4>M.Sc</h4>
+                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                <a href="#" class="dropdown-item">Mathematics</a>
+                <a href="#" class="dropdown-item">Physics</a>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <h4 class="humanities"><a href="#">Humanities</a></h4>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> Facilities </a>
+          <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
+            <a href="#" class="dropdown-item">Library</a>
+            <a href="#" class="dropdown-item">Hostel</a>
+            <a href="#" class="dropdown-item">Bus</a>
+            <a href="#" class="dropdown-item">Internet</a>
+            <a href="#" class="dropdown-item">Guest House</a>
+            <a href="#" class="dropdown-item">Health Center</a>
+            <a href="#" class="dropdown-item">Image Gallery</a>
+            <a href="#" class="dropdown-item">JIST Women Cell</a>
+            <a href="#" class="dropdown-item">JIST Electronic Hobby Club</a>
+          </div>
+        </li>
+        {% if Data %}
+        <li class="nav-item">
+          <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="login" class="nav-link"> Stu-Info </a>
+        </li>
+        {% endif %}
+        {% if Data %}
+        <li class="nav-item">
+          <a href="\" class="nav-link logout-btn"> Logout </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="login" class="nav-link login-btn"> Login </a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+
+  </nav>
+
+
+  <!--- Image Slider -->
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/1.png' %}" alt="img">
+        <div class="carousel-caption">
+          <h1>JIST</h1>
+          <hr>
+          <p>Jorhat Institute of Science and Technology</p>
+          <img src="{% static 'images/emblem.png' %}" alt="img">
+          <h2>A Govt. of Assam <br> Institution</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/sky.png' %}" alt="img">
+        <div class="carousel-caption">
+          <h3>A premier Institute Of Excellence</h3>
+          <h4>In field of Science and Technology in Assam</h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/3.png' %}" alt="img">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--- Two Column Section principal -->
+  <div class="container-fluid padding princi">
+    <div class="row padding">
+      <div class="col-md-12 princi-head text-center">
+        <h1>Our Principal</h1>
+        <hr>
+      </div>
+      <div class="col-lg-6 col-md-12 contain">
+        <h2 data-aos="fade-right">Word from the Principal...</h2>
+        <!-- <hr data-aos="fade-up"> -->
+        <p data-aos="fade-right">
+          <i class="fas fa-quote-left"></i>
+          With a sense of pride I would like to bring to the knowledge of all concerned that the
+          earlier Science
+          College (established by the govt. of Assam in 1971) which was later upgraded to Jorhat Institute of Science
+          and Technology (in 2008) has remained a college of first choice for young knowledge seekers in the region. It
+          has emerged as a premier institute in the entire North East India. It was the first college in the easter
+          With a sense of pride I would like to bring to the knowledge of all concerned that the earlier Science
+          College (established by the govt. of Assam in 1971) which was later upgraded to Jorhat Institute of Science
+          and Technology (in 2008) has remained a college of first choice for young knowledge seekers in the region. It
+          has emerged as a premier institute in the entire North East India. It was the first college in the easte
+          region of India to undergo NAAC accrediation. Our alumni have excelled in diverse fields such as education,
+          JIST boasts of a dedicated and accomplished faculty of about 60 members, more than 700 students and around 40
+          other employees
+          JIST is a ragging free and tobacco free Institute.
+          region of India to undergo NAAC accrediation. Our alumni have excelled in diverse fields such as education,
+          JIST boasts of a dedicated and accomplished faculty of about 60 members, more than 700 students and around 40
+          other employees
+          JIST is a ragging free and tobacco free Institute.
+        </p>
+        <p data-aos="fade-right">
+          I invite you all to become a part of this great institute. I am happy and feel proud to be part of it.
+        </p>
+        <hr data-aos="fade-right">
+        <p class="princi-name" data-aos="fade-right"><i>~ Dr. B. N. Choudhury, B.E., M.Tech., Ph.D.</i></p>
+        <p class="princi-email" data-aos="fade-right">Email Id : <a
+            href="mailto:principaljist@gmail.com">principaljist@gmail.com</a></p>
+        <!-- <div class="princi-bot">
+            <p class="princi-name"><i>~ Dr. B. N. Choudhury, B.E., M.Tech., Ph.D.</i></p>
+            <p class="princi-email">Email Id : <a href="mailto:principaljist@gmail.com" >principaljist@gmail.com</a></p>
+        </div> -->
+      </div>
+      <div class="col-lg-6 col-md-12 contain text-center">
+        <a href="{% static 'images/principal-jist.jpg' %}" data-lightbox="princi-img">
+          <img src="{% static 'images/principal-jist-circular.png' %}" alt="princi" data-aos="fade-left"></a>
+      </div>
+    </div>
+  </div>
+
+  <!--- Fixed background -->
+  <div class="fixed-background">
+    <div class="row text-center dark">
+      <div class="col-12">
+        <h2>Why JIST?</h2>
+        <hr class="p-bot-line">
+      </div>
+      <div class="col-lg-3 col-md-6 section">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <i class="fas fa-chalkboard-teacher"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="#">
+          <h3>Teachers</h3>
+          <p>Here in jist we have teachers that are ready to
+            help you, click to know
+            more.
+          </p>
+          <hr>
+        </a>
+
+      </div>
+      <div class="col-lg-3 col-md-6 section">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fas fa-book"></i>
+              <i class="fas fa-book"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="#">
+          <h3>Departments</h3>
+          <p>Here in JIST we have plenty of courses to choose form
+            join us to learn your favrouite one.
+          </p>
+          <hr>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 section">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fas fa-university"></i>
+              <i class="fas fa-university"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="#">
+          <h3>Infrastructure</h3>
+          <p>We have a nicely build infrastructure to help you
+            achieve what you seek in life.
+          </p>
+          <hr>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6 section">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fas fa-graduation-cap"></i>
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+          </li>
+        </ul>
+        <a href="#">
+          <h3>College Life</h3>
+          <p>Be here, be yourself, read what you like and achieve
+            what you dream of. click to know more.
+          </p>
+          <hr>
+        </a>
+      </div>
+    </div>
+    <div class="fixed-wrap">
+      <div class="fixed">
+        <img src="{% static 'images/1.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!--- abeyantrix section -->
+
+  <div class="container-fluid abe-contain">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h5>Events</h5>
+        <hr>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <h2 class="abe-head">College Events</h2>
+        <p class="abe-para">
+          Here in jist we have several events that are performed
+          throughout the year with a lot of excitement and joy. Students from
+          different institiutions also join in them. Some of the events are
+          Abeyaantrix, College Week, Cultural Rally.
+        </p>
+      </div>
+
+      <div class="col-lg-8 col-md-12 img-gallery">
+        <div class="container con">
+          <div class="" id="my-grid" class="grid-padding">
+            <div class="row">
+              <div class="col-lg-5 col-md-12 ig-1">
+                <div class="row" data-aos="fade-up-right" data-aos-duration="1000">
+                  <a href="{% static 'images/Abx_olly.jpg' %}" data-lightbox="my-gallery"><img
+                      src="{% static 'images/oli-2.png' %}" alt="" class="mid-1"></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 ig">
+                <div class="row" data-aos="fade-down-left" data-aos-duration="1000">
+                  <a href="{% static 'images/Abx_Sahil.jpg' %}" data-lightbox="my-gallery"><img
+                      src="{% static 'images/bawra.png' %}" alt="" class=" mid-2"></a>
+                </div>
+                <div class="row" data-aos="fade-up" data-aos-duration="1000">
+                  <a href="{% static 'images/Abx_car.jpg' %}" data-lightbox="my-gallery"><img
+                      src="{% static 'images/small-car.png' %}" alt="" class="mid-3"></a>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-12 ig">
+                <div class="row" data-aos="fade-up-left" data-aos-duration="1000">
+                  <a href="{% static 'images/Clg_guitar.jpg' %}" data-lightbox="my-gallery"><img
+                      src="{% static 'images/guitar.png' %}" alt="" class=" mid-4"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--- feedback section -->
+
+  <div class="container-fluid feed-container">
+    <div class="row">
+      <div class="col-lg-12 p-0">
+        <h3 class="feed-heading">Feedback</h3>
+        <hr>
+        <div class="feed-name" data-aos="fade-up" data-aos-duration="900">
+          <h4> {{feedback.name}} </h4>
+          <div class="feedback" data-aos="zoom-in-up" data-aos-duration="700" data-aos-delay="300">
+            <p> {{feedback.feedback}}...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-one">
+            <h3>Contact Us</h3>
+            <hr>
+            <p><a href="#"><i class="fas fa-map-marked-alt"></i>Sotai, Chenijan, Jorhat, (Assam), India, 785010</a></p>
+            <p><a href="#"><i class="fas fa-phone-alt"></i>0376-2395369</a></p>
+            <p><a href="mailto:principaljist@gmail.com"><i class="far fa-envelope"></i>principaljist@gmail.com</a></p>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-two">
+            <h3>Quick Links</h3>
+            <hr>
+            <ul>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>AICTE</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>Grievance Cell</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>NAAC</a></li>
+              <li><a href="#"><i class="fas fa-angle-double-right"></i>Anti Ragging</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-three">
+            <h3>Follow Us</h3>
+            <hr>
+            <p>Follow us on social media to stay updated.</p>
+            <a href="#" class="social-icons"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icons"><i class="fab fa-youtube"></i></a>
+            <h1>Web Admin :</h1>
+            <a href="#">prachurjyagogoi123@gmail.com</a>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-xs-12 segment-four">
+            <h3>Feedback</h3>
+            <hr>
+            <p>This will help us to develop ourselves.</p>
+            <form action="feedback" method="POST">
+              {% csrf_token %}
+              <label for="name">Name :</label><br>
+              <input type="text" name="name" placeholder="Name"><br>
+              <label for="feedback">Feedback :</label><br>
+              <input type="text" name="feedback" placeholder="Your Feedback"><br>
+              {% if Data %}
+              <input type="submit" value="send & logout">
+              {% else %}
+              <input type="submit" value="send">
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom-text">All Rights reserved by &copy;Paper Arts Studios(2019)</p>
+  </footer>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+
+  <!--- animating numbers in fixed section -->
+  <!-- <script>
+    let nCount = function (selector) {
+      $(selector).each(function () {
+        $(this).animate({
+          Counter: $(this).text()
+        }, {
+          duration: 3500,
+          easing: "swing",
+          step: function (value) {
+            $(this).text(Math.ceil(value))
+          }
+        })
+      });
+    }
+
+    let a = 0;
+    $(window).scroll(function () {
+      let oTop = $(".fixed-background .dark").offset().top - window.innerHeight;
+      if (a == 0 && $(window).scrollTop() >= oTop) {
+        a++;
+        nCount(".section > h3");
+      }
+    })
+  </script> -->
+
+</body>
+
+</html>
