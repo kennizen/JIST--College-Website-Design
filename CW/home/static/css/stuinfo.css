@@ -1,169 +1,114 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: sans-serif;
     box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    background-image: linear-gradient(120deg, #3498db, #8e44ad);
+
+    overflow-x: hidden;
+    font-family: 'Poppins';
+
 }
 
+.box .input-box input {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 20px 0px 20px 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #E0E0E0;
+    transition: .3s;
+}
 
-.login-form {
-    width: 660px;
-    background: #f1f1f1;
-    height: 920px;
-    padding: 40px 40px;
-    border-radius: 30px;
+.box .input-box input:focus{
+    border-bottom: 1px solid rgba(0, 176, 255, 1);
+}
+
+.box .input-box label {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.login-form h1 {
-    text-align: center;
-    margin-bottom: 50px;
+    left: 15px;
+    top: 25px;
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 18px;
     color: #424242;
 }
 
-.txtb {
-    border-bottom: 1px solid #E0E0E0;
-    position: relative;
-    margin: 25px 0;
+.box .input-box input:focus~label,
+.box .input-box input:valid~label {
+    top: 3px;
+    font-size: 16px;
+    color: rgba(0, 176, 255, 1) ;
 }
 
-.txtb input {
-    font-size: 17px;
-    color: #333;
-    border: none;
-    width: 100%;
-    outline: none;
-    background: none;
-    padding: 0 5px;
-    height: 40px;
+h2 {
+    margin: 90px auto 0px auto;
+    text-align: center;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.txtb span::before {
-    content: attr(data-placeholder);
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    z-index: -1;
-    transition: .3s;
-}
-
-.txtb span::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    transform: translateY(-50%);
-    width: 0%;
+hr{
+    background: rgba(0, 176, 255, 1);
+    width: 200px;
     height: 2px;
-    background: linear-gradient(120deg, #3498db, #8e44ad);
-    transition: .3s;
+    margin: 20px auto 50px auto;
+    border-radius: 15px;
 }
 
-.focus+span::before {
-    font-size: 15px;
-    top: -5px;
-    color: red;
-}
-
-.focus+span::after {
-    width: 100%;
-}
-
-.logbtn {
-    display: block;
-    margin: auto;
-    width: 50%;
-    height: 50px;
-    border: none;
-    background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
-    background-size: 200%;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-    transition: .3s;
-    border-radius: 90px;
-    margin-top: 30px;
-    font-size: 19px
-}
-
-.logbtn:hover {
-    background-position: right;
-}
-
-.txtb textarea {
-    background: none;
-    border: none;
-    outline: none;
-    resize: none;
-    font-size: 17px;
-    padding: 5px;
-}
-
-/* .date{
-    width: 100%;
-    
-} */
-
-/* .date input{
-    width: 100%;
-    background: none;
-    outline: none;
-    border: none;
-    padding-top: 30px;
-    margin-left: 1px;
-    font-size: 14px;
-    color: black;
-    
-} */
-
-/* .date label{
-    position: absolute;
-    left: 44px;
-    top: 480px;
-    font-size: 17px;
-    color: #adadad;
-} */
-
-.gender input{
-    background-color: #adadad;
-}
- 
-
-
-.gender label{
-    position: absolute;
-    left: 45px;
-    top: 690px;
-    color: #adadad;
-    pointer-events: none;
-}
-
-.gender  .male {
-    margin-left: 5px;
-    margin-top: 55px;
-    font-size: 17px;
+.form-con {
+    background: rgba(245, 245, 245, 1.0);
+    padding: 30px 50px;
     margin-bottom: 50px;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, .5);
 }
 
-.gender  .female {
-    margin-left: 15px;
-    font-size: 17px;
+.gender{
+  
+    margin-top: 2px;
 }
 
-.gender  .others {
-    margin-left: 15px;
-    font-size: 17px;
+.age{
+  
+    margin-top: 2px;
+}
+
+.caste{
+  
+    margin-top: 2px;
+}
+
+.btn-sub input[type = 'submit']{
+    border: none;
+    outline: none;
+    background: none;
+    border: 2px solid rgba(0, 176, 255, 1);
+    font-size: 18px;
+    border-radius: 15px;
+    width: 200px;
+    padding: 3px 0px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn-sub input[type = 'submit']:hover{
+    background: rgba(0, 176, 255, 1);
+    color: white;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
+}
+
+.btn-sub hr{
+    background: rgba(0, 176, 255, 1);
+   width: 100%;
+    height: 1px;
+    margin: 20px auto 20px auto;
+    border-radius: 50%;
+}
+
+.btn-sub p{
+    font-size: 14px;
 }

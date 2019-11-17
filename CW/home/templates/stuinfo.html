@@ -1,96 +1,148 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="{% static 'css/stuinfo.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
 </head>
 
 <body>
 
-    <form action="{{name}}" class="login-form" method="POST">
-        {% csrf_token %}
-        <h1>Student Registration Form</h1>
 
-        <div class="name-container">
-            <div class="txtb">
-                <input type="text" name="first_name">
-                <span data-placeholder="First name"></span>
-            </div>
-
-            <div class="txtb">
-                <input type="text" name="last_name">
-                <span data-placeholder="Last name"></span>
-            </div>
+    <div class="box">
+        <h2>Student Registration</h2>
+        <hr>
+        <div class="container form-con">
+            <form action="{{name}}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="text" name="first_name" required>
+                            <label for="">First Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="text" name="last_name" required>
+                            <label for="">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="text" name="guardian_name" required>
+                            <label for="">Guardian Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 age">
+                        <div class="input-box-age">
+                            <select class="mdb-select md-form" name="age" required>
+                                <option value="" disabled selected>Age</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-box">
+                            <input type="text" name="phone_no" required>
+                            <label for="">Phone No. ( 10 digit phone number )</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 caste">
+                        <div class="input-box-caste">
+                            <select class="mdb-select md-form" name="caste" required>
+                                <option value="" disabled selected>Caste</option>
+                                <option value="General">General</option>
+                                <option value="OBC">OBC</option>
+                                <option value="MOBC">MOBC</option>
+                                <option value="ST/SC">ST/SC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="text" name="nationality" required>
+                            <label for="">Nationality</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-box">
+                            <input type="email" name="email" required>
+                            <label for="">Email-Id</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 gender">
+                        <div class="input-box-gender">
+                            <select class="mdb-select md-form" name="gender" required>
+                                <option value="" disabled selected>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-box">
+                            <input type="text" name="address" required>
+                            <label for="">Address</label>
+                        </div>
+                    </div>
+                    <div class="container btn-sub">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <input type="submit" value="Submit">
+                                <hr>
+                                <p>* you are required to fill the same information 
+                                    that has been submitted to the college administration.
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <div class="txtb">
-            <input type="text" name="guardian_name">
-            <span data-placeholder="Guardian name"></span>
-        </div>
-
-        <div class="txtb">
-            <input type="text" name="phone_no">
-            <span data-placeholder="PhoneNo. (10 digit)"></span>
-        </div>
-
-        <div class="txtb">
-            <textarea cols="50" rows="2" name="address"></textarea>
-            <span data-placeholder="Address"></span>
-        </div>
-
-        <div class="txtb">
-            <input type="email" name="email">
-            <span data-placeholder="Email"></span>
-        </div>
-
-        <div class="txtb">
-            <input type="text" name="age">
-            <span data-placeholder="Age"></span>
-        </div>
-
-        <div class="txtb">
-            <input type="text" name="caste">
-            <span data-placeholder="Caste"></span>
-        </div>
-
-
-        <div class="txtb">
-            <input type="text" name="nationality">
-            <span data-placeholder="Nationality"></span>
-        </div>
-
-
-        <div class="gender">
-            <label for="">Gender</label>
-            <input type="radio" name="gender" value="Male" class="male"> Male
-            <input type="radio" name="gender" value="Female" class="female"> Female
-            <input type="radio" name="gender" value="Others" class="others"> Others
-        </div>
-
-
-        <input type="submit" class="logbtn" value="Submit">
+    </div>
 
 
 
-    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <script type="text/javascript">
-        $(".txtb input,textarea").on("focus", function () {
-            $(this).addClass("focus");
-        });
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+    <!-- <script src="js/script.js"></script> -->
 
-        $(".txtb input,textarea").on("blur", function () {
-            if ($(this).val() == "")
-                $(this).removeClass("focus");
+    <script>
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
         });
     </script>
-
 
 </body>
 

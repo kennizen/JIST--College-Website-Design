@@ -433,29 +433,15 @@
   </script>
   <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
 
-  <!--- animating numbers in fixed section -->
+  <!--- navbar scroll -->
   <!-- <script>
-    let nCount = function (selector) {
-      $(selector).each(function () {
-        $(this).animate({
-          Counter: $(this).text()
-        }, {
-          duration: 3500,
-          easing: "swing",
-          step: function (value) {
-            $(this).text(Math.ceil(value))
-          }
-        })
-      });
-    }
-
-    let a = 0;
-    $(window).scroll(function () {
-      let oTop = $(".fixed-background .dark").offset().top - window.innerHeight;
-      if (a == 0 && $(window).scrollTop() >= oTop) {
-        a++;
-        nCount(".section > h3");
-      }
+    var zero = 0;
+    $(document).ready(function(){
+      $(window).on('scroll', function(){
+        $('.navbar').toggleClass('hide', $(window).scrollTop()
+        > zero);
+        zero = $(window).scrollTop();
+      })
     })
   </script> -->
 
