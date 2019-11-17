@@ -17,9 +17,13 @@ def registration_page(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        user = userInfo( username = username, password = password)
-        user.save()
-        print('user created')
+        if(userInfo.objects.filter(username = username).exists()):
+            return HttpResponse('Username already taken !')
+
+        else:
+            user = userInfo( username = username, password = password)
+            user.save()
+            
         return redirect('/login')
     else:
         return render(request,'registration.html')
@@ -34,7 +38,7 @@ def login_page(request):
             return render(request,'index.html', {"Data": username , 'feedback' : fd})
             
         else:
-            return redirect('/login')
+            return HttpResponse('Invalid Credentials !')
     else:
         return render(request,'login.html')
 

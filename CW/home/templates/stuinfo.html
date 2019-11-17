@@ -27,7 +27,7 @@
         <h2>Student Registration</h2>
         <hr>
         <div class="container form-con">
-            <form action="{{name}}" method="POST">
+            <form action="{{name}}" method="POST" onsubmit="return validate()">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="input-box">
-                            <input type="text" name="phone_no" required>
+                            <input type="number" id="phone" name="phone_no" required>
                             <label for="">Phone No. ( 10 digit phone number )</label>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
+    <script src="{% static 'js/validate-stu.js' %}"></script>
     <script src="{% static 'js/mdb.min.js' %}"></script>
     <!-- <script src="js/script.js"></script> -->
 

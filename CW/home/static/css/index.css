@@ -309,7 +309,7 @@ body {
     padding-left: 10px;
     margin-bottom: 30px;
     font-size: 25px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .princi .contain img {
@@ -876,10 +876,10 @@ body {
 
     .feed-name h4 {
         margin: 30px auto 0px auto;
-        padding: 0px 0px 5px 5px;
-        border: none;
-        border-bottom: 2px solid rgba(0, 176, 255, 1);
+        padding: 0;
+        border: none; 
         width: 100px;
+        text-align: center;
     }
 
 }

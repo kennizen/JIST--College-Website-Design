@@ -7,12 +7,12 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="{% static 'css/reg.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    
 </head>
 
 <body>
 
-    <form action="registration" class="login-form" method="POST">
+    <form action="registration" class="login-form" method="POST" onsubmit="return validate()">
         {% csrf_token %}
         <h1>Registration Form</h1>
         <hr>
@@ -20,7 +20,7 @@
 
 
             <div class="txtb">
-                <input type="text" name="username">
+                <input type="text" id="uname" name="username">
                 <span data-placeholder="Username"></span>
             </div>
 
@@ -32,12 +32,12 @@
 
 
             <div class="txtb">
-                <input type="password" name="password">
+                <input type="password" id="pass" name="password">
                 <span data-placeholder="Password"></span>
             </div>
 
             <div class="txtb">
-                <input type="password" name="confirmpassword">
+                <input type="password" id="cpass" name="confirmpassword">
                 <span data-placeholder="Confirm Password"></span>
             </div>
 
@@ -55,6 +55,8 @@
 
     </form>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="{% static 'js/validate-reg.js' %}"></script>
 
     <script type="text/javascript">
         $(".txtb input").on("focus", function () {
