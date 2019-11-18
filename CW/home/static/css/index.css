@@ -20,6 +20,10 @@ body {
     box-shadow: 3px 3px 10px #263238;
 }
 
+#navbar{
+    transition: .5s;
+}
+
 .navbar-toggler .navbar-toggler-icon{
    color: rgba(0, 176, 255, 1);
    padding: 0;

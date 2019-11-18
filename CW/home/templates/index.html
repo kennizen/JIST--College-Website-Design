@@ -25,7 +25,7 @@
 
   <!-- Navigation -->
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <a class="navbar-brand" href="#">
       <img src="{% static 'images/logo1.png' %}" alt="logo">
       <h1 class="logo-name">Jist</h1>
@@ -432,18 +432,8 @@
     AOS.init();
   </script>
   <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
-
   <!--- navbar scroll -->
-  <!-- <script>
-    var zero = 0;
-    $(document).ready(function(){
-      $(window).on('scroll', function(){
-        $('.navbar').toggleClass('hide', $(window).scrollTop()
-        > zero);
-        zero = $(window).scrollTop();
-      })
-    })
-  </script> -->
+  <script src="{% static 'js/scroll-nav.js' %}"></script>
 
 </body>
 
