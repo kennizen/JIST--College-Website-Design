@@ -46,13 +46,8 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"> Administration </a>
           <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
-            {% if Data %}
-            <a href="notice-1/{{Data}}" class="dropdown-item">Notice</a>
-            {% else %}
-            <a href="notice-2" class="dropdown-item">Notice</a>
-            {% endif %}
-            <a href="#" class="dropdown-item">Board of Governors</a>
-            <a href="#" class="dropdown-item">Office Staff</a>
+            <a href="notice" class="dropdown-item">Notice</a>
+            <a href="bog" class="dropdown-item">Board of Governors</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -64,28 +59,24 @@
                 <h4>B.Sc</h4>
                 <a href="#" class="dropdown-item">Physics Dept.</a>
                 <a href="#" class="dropdown-item">Chemistry Dept.</a>
-                <a href="#" class="dropdown-item">Mathematics Dept.</a>
-                {% if Data %}
-                <a href="dept-IT-1/{{Data}}" class="dropdown-item">IT</a>
-                {% else %}
-                <a href="dept-IT-2" class="dropdown-item">IT</a>
-                {% endif %}
+                <a href="maths" class="dropdown-item">Mathematics Dept.</a>
+                <a href="it" class="dropdown-item">IT</a>
               </div>
               <div class="col-lg-3 col-sm-6">
                 <h4>Engineering</h4>
                 <a href="#" class="dropdown-item">Civil</a>
-                <a href="#" class="dropdown-item">Etc</a>
+                <a href="etc" class="dropdown-item">Etc</a>
                 <a href="#" class="dropdown-item">Mechanical</a>
                 <a href="#" class="dropdown-item">PE and I</a>
               </div>
               <div class="col-lg-3 col-sm-6">
                 <h4>M.Sc</h4>
                 <a href="#" class="dropdown-item">Chemistry Dept.</a>
-                <a href="#" class="dropdown-item">Mathematics</a>
+                <a href="maths" class="dropdown-item">Mathematics</a>
                 <a href="#" class="dropdown-item">Physics</a>
               </div>
               <div class="col-lg-3 col-sm-6">
-                <h4 class="humanities"><a href="#">Humanities</a></h4>
+                <h4 class="humanities"><a href="humanities">Humanities</a></h4>
               </div>
             </div>
         </li>
@@ -93,18 +84,11 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"> Facilities </a>
           <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
-            <a href="#" class="dropdown-item">Library</a>
-            <a href="#" class="dropdown-item">Hostel</a>
-            <a href="#" class="dropdown-item">Bus</a>
-            <a href="#" class="dropdown-item">Internet</a>
-            <a href="#" class="dropdown-item">Guest House</a>
-            <a href="#" class="dropdown-item">Health Center</a>
-            <a href="#" class="dropdown-item">Image Gallery</a>
-            <a href="#" class="dropdown-item">JIST Women Cell</a>
-            <a href="#" class="dropdown-item">JIST Electronic Hobby Club</a>
+            <a href="library" class="dropdown-item">Library</a>
+            <a href="hostel" class="dropdown-item">Hostel</a>
           </div>
         </li>
-        {% if name %}
+        {% if Data %}
         <li class="nav-item">
           <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
         </li>
@@ -113,7 +97,7 @@
           <a href="login" class="nav-link"> Stu-Info </a>
         </li>
         {% endif %}
-        {% if name %}
+        {% if Data %}
         <li class="nav-item">
           <a href="\" class="nav-link logout-btn"> Logout </a>
         </li>
@@ -127,6 +111,7 @@
     </div>
 
   </nav>
+
 
 
   <div class="container head">

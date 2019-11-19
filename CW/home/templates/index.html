@@ -44,14 +44,9 @@
         <li class="nav-item dropdown ">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"> Administration </a>
-          <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
-            {% if Data %}
-            <a href="notice-1/{{Data}}" class="dropdown-item">Notice</a>
-            {% else %}
-            <a href="notice-2" class="dropdown-item">Notice</a>
-            {% endif %}
-            <a href="#" class="dropdown-item">Board of Governors</a>
-            <a href="#" class="dropdown-item">Office Staff</a>
+          <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">  
+            <a href="notice" class="dropdown-item">Notice</a>            
+            <a href="bog" class="dropdown-item">Board of Governors</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -63,28 +58,24 @@
                 <h4>B.Sc</h4>
                 <a href="#" class="dropdown-item">Physics Dept.</a>
                 <a href="#" class="dropdown-item">Chemistry Dept.</a>
-                <a href="#" class="dropdown-item">Mathematics Dept.</a>
-                {% if Data %}
-                <a href="dept-IT-1/{{Data}}" class="dropdown-item">IT</a>
-                {% else %}
-                <a href="dept-IT-2" class="dropdown-item">IT</a>
-                {% endif %}
+                <a href="maths" class="dropdown-item">Mathematics Dept.</a>
+                <a href="it" class="dropdown-item">IT</a>
               </div>
               <div class="col-lg-3 col-sm-6">
                 <h4>Engineering</h4>
                 <a href="#" class="dropdown-item">Civil</a>
-                <a href="#" class="dropdown-item">Etc</a>
+                <a href="etc" class="dropdown-item">Etc</a>
                 <a href="#" class="dropdown-item">Mechanical</a>
                 <a href="#" class="dropdown-item">PE and I</a>
               </div>
               <div class="col-lg-3 col-sm-6">
                 <h4>M.Sc</h4>
                 <a href="#" class="dropdown-item">Chemistry Dept.</a>
-                <a href="#" class="dropdown-item">Mathematics</a>
+                <a href="maths" class="dropdown-item">Mathematics</a>
                 <a href="#" class="dropdown-item">Physics</a>
               </div>
               <div class="col-lg-3 col-sm-6">
-                <h4 class="humanities"><a href="#">Humanities</a></h4>
+                <h4 class="humanities"><a href="humanities">Humanities</a></h4>
               </div>
             </div>
         </li>
@@ -92,15 +83,8 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"> Facilities </a>
           <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
-            <a href="#" class="dropdown-item">Library</a>
-            <a href="#" class="dropdown-item">Hostel</a>
-            <a href="#" class="dropdown-item">Bus</a>
-            <a href="#" class="dropdown-item">Internet</a>
-            <a href="#" class="dropdown-item">Guest House</a>
-            <a href="#" class="dropdown-item">Health Center</a>
-            <a href="#" class="dropdown-item">Image Gallery</a>
-            <a href="#" class="dropdown-item">JIST Women Cell</a>
-            <a href="#" class="dropdown-item">JIST Electronic Hobby Club</a>
+            <a href="library" class="dropdown-item">Library</a>
+            <a href="hostel" class="dropdown-item">Hostel</a>
           </div>
         </li>
         {% if Data %}
@@ -381,10 +365,10 @@
             <h3>Quick Links</h3>
             <hr>
             <ul>
-              <li><a href="#"><i class="fas fa-angle-double-right"></i>AICTE</a></li>
-              <li><a href="#"><i class="fas fa-angle-double-right"></i>Grievance Cell</a></li>
-              <li><a href="#"><i class="fas fa-angle-double-right"></i>NAAC</a></li>
-              <li><a href="#"><i class="fas fa-angle-double-right"></i>Anti Ragging</a></li>
+              <li><a href="https://www.aicte-india.org/"><i class="fas fa-angle-double-right"></i>AICTE</a></li>
+              <li><a href="http://www.jist.ac.in/grievance-cell.php"><i class="fas fa-angle-double-right"></i>Grievance Cell</a></li>
+              <li><a href="http://www.naac.gov.in/"><i class="fas fa-angle-double-right"></i>NAAC</a></li>
+              <li><a href="https://www.antiragging.in/"><i class="fas fa-angle-double-right"></i>Anti Ragging</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-sm-6 col-xs-12 segment-three">
@@ -396,7 +380,7 @@
             <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-icons"><i class="fab fa-youtube"></i></a>
             <h1>Web Admin :</h1>
-            <a href="#">prachurjyagogoi123@gmail.com</a>
+            <a href="mailto:prachurjyagogoi123@gmail.com">prachurjyagogoi123@gmail.com</a>
           </div>
           <div class="col-lg-3 col-sm-6 col-xs-12 segment-four">
             <h3>Feedback</h3>

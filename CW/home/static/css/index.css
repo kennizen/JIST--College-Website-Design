@@ -21,7 +21,7 @@ body {
 }
 
 #navbar{
-    transition: .5s;
+    transition: .5s ease-in;
 }
 
 .navbar-toggler .navbar-toggler-icon{

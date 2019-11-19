@@ -18,7 +18,7 @@ def registration_page(request):
         password = request.POST['password']
 
         if(userInfo.objects.filter(username = username).exists()):
-            return HttpResponse('Username already taken !')
+            return HttpResponse('Username already taken !','index.html')
 
         else:
             user = userInfo( username = username, password = password)
@@ -66,10 +66,10 @@ def stu_info(request,name):
     else:
         if stuInfo.objects.filter(username = name).exists():
             context = stuInfo.objects.all().filter(username = name)
-            if stuInfo.objects.filter(status = True):
-                return render(request,'stu-info-show.html',{'name' : context, 'status' : True})
-            else:
-                return render(request,'stu-info-show.html',{'name' : context})
+            # if stuInfo.objects.filter(status = True):
+            #     return render(request,'stu-info-show.html',{'name' : context, 'status' : True})
+            # else:
+            return render(request,'stu-info-show.html',{'name' : context})
             
         else:
             return render(request, 'stuinfo.html', {'name' : name})
@@ -93,20 +93,37 @@ def feedback(request):
         return redirect('/')
     
    
-def notice_1(request,name):
-    return render(request, 'notice.html',{'name' : name} )
-
-
-def notice_2(request):
+def notice(request):
     return render(request, 'notice.html')        
 
 
+def it(request):
+    return render(request, 'it.html')   
 
-def dept_IT_1(request,name):
-    return render(request, 'dept.html',{'name' : name} )
+
+def library(request):
+    return render(request, 'library.html') 
 
 
-def dept_IT_2(request):
-    return render(request, 'dept.html')    
+def hostel(request):
+    return render(request, 'hostel.html') 
+
+
+def bog(request):
+    return render(request, 'bog.html')
+
+
+def humanities(request):
+    return render(request, 'humanities.html')
+
+
+def maths(request):
+    return render(request, 'math.html')
+
+
+def etc(request):
+    return render(request, 'etc.html') 
+
+
 
     

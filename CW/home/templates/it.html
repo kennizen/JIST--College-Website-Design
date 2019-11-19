@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IT</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dept.css' %}">
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo1.png' %}" alt="logo">
+            <h1 class="logo-name">Jist</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="\" class="nav-link"> Home </a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> Administration </a>
+                    <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
+                        <a href="notice" class="dropdown-item">Notice</a>
+                        <a href="bog" class="dropdown-item">Board of Governors</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="mega-one" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"> Department </a>
+                    <div id="department" class="dropdown-menu  mega-menu" aria-labelledby="mega-one">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <h4>B.Sc</h4>
+                                <a href="#" class="dropdown-item">Physics Dept.</a>
+                                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                                <a href="maths" class="dropdown-item">Mathematics Dept.</a>
+                                <a href="it" class="dropdown-item">IT</a>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h4>Engineering</h4>
+                                <a href="#" class="dropdown-item">Civil</a>
+                                <a href="etc" class="dropdown-item">Etc</a>
+                                <a href="#" class="dropdown-item">Mechanical</a>
+                                <a href="#" class="dropdown-item">PE and I</a>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h4>M.Sc</h4>
+                                <a href="#" class="dropdown-item">Chemistry Dept.</a>
+                                <a href="maths" class="dropdown-item">Mathematics</a>
+                                <a href="#" class="dropdown-item">Physics</a>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h4 class="humanities"><a href="humanities">Humanities</a></h4>
+                            </div>
+                        </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> Facilities </a>
+                    <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
+                        <a href="library" class="dropdown-item">Library</a>
+                        <a href="hostel" class="dropdown-item">Hostel</a>
+                    </div>
+                </li>
+                {% if Data %}
+                <li class="nav-item">
+                    <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="login" class="nav-link"> Stu-Info </a>
+                </li>
+                {% endif %}
+                {% if Data %}
+                <li class="nav-item">
+                    <a href="\" class="nav-link logout-btn"> Logout </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="login" class="nav-link login-btn"> Login </a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 dept-head text-center">
+                <h1>Dept of CS & IT</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container about-dept-con">
+        <div class="row">
+            <div class="col-lg-12 text-center about-head">
+                <h1>About Department</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center about-para">
+                <p>The Computer Science and IT department was introduced in the year 2007,
+                    with a three year professional course in B.Sc. (IT) affiliated to Dibrugarh
+                    University with an aim to expand the Institute and as well impart professional
+                    education to the students of the locality. The course is the most upto-date one.
+                    The department also impart courses in other B.Sc. and Engineering Departments.
+                    Almost, all out going students are either employed in many reputated MNCs and in Govt.
+                    Institutions/Govt. Undertakings, besides doing higher studies.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 teacher-head text-center">
+                <h1>Our Teachers</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container teacher-details">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 teacher-img">
+                <img src="{% static 'images/jm.png' %}" alt="">
+                <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus"></i></p>
+            </div>
+            <div class="col-lg-7 col-md-12 teacher-info">
+                <p><label class="label">Name : </label> <label class="label-info"> Mr. Jameson Mushahary.</label></p>
+                <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
+                <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof. & HoD.</label>
+                </p>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> jameson.mush@gmail.com</label>
+                </p>
+                <p><label class="label">Contact Number : </label> <label class="label-info"> 9954166745 (m).</label></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container teacher-details">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 teacher-img">
+                <img src="{% static 'images/bobita.png' %}" alt="">
+                <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus"></i></p>
+            </div>
+            <div class="col-lg-7 col-md-12 teacher-info">
+                <p><label class="label">Name : </label> <label class="label-info"> Mrs. Bobita Dutta.</label></p>
+                <p><label class="label">Qualification : </label> <label class="label-info"> M.Sc., MPhil.</label></p>
+                <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
+                        Contractual)</label></p>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> bobitaduttajrt@gmail.com</label>
+                </p>
+                <p><label class="label">Contact Number : </label> <label class="label-info"> 9085066999</label></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container teacher-details">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 teacher-img">
+                <img src="{% static 'images/rajiv.png' %}" alt="">
+                <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus"></i></p>
+            </div>
+            <div class="col-lg-7 col-md-12 teacher-info">
+                <p><label class="label">Name : </label> <label class="label-info"> Mr. Rajiv Kalita.</label></p>
+                <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
+                <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
+                        Contractual).</label></p>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> rajivjec@gmail.com</label>
+                </p>
+                <p><label class="label">Contact Number : </label> <label class="label-info"> 9957212166.</label></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container teacher-details">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 teacher-img">
+                <img src="{% static 'images/himadri.png' %}" alt="">
+                <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus"></i></p>
+            </div>
+            <div class="col-lg-7 col-md-12 teacher-info">
+                <p><label class="label">Name : </label> <label class="label-info"> Miss Himadri Neog.</label></p>
+                <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
+                <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
+                        Prof.(Contractual).</label></p>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> NULL</label>
+                </p>
+                <p><label class="label">Contact Number : </label> <label class="label-info"> 8876434892.</label></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container teacher-details">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 teacher-img">
+                <img src="{% static 'images/hsuvas.png' %}" alt="">
+                <p><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus"></i></p>
+            </div>
+            <div class="col-lg-7 col-md-12 teacher-info">
+                <p><label class="label">Name : </label> <label class="label-info"> Mr. Hsuvash Borkakoty.</label></p>
+                <p><label class="label">Qualification : </label> <label class="label-info"> MSc (IT).</label></p>
+                <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
+                        Prof.(Contractual).</label></p>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> NULL</label>
+                </p>
+                <p><label class="label">Contact Number : </label> <label class="label-info"> 7002779452</label></p>
+            </div>
+        </div>
+    </div>
+
+    <!--- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 col-xs-12 segment-one">
+                        <h3>Contact Us</h3>
+                        <hr>
+                        <p><a href="#"><i class="fas fa-map-marked-alt"></i>Sotai, Chenijan, Jorhat, (Assam), India,
+                                785010</a></p>
+                        <p><a href="#"><i class="fas fa-phone-alt"></i>0376-2395369</a></p>
+                        <p><a href="mailto:principaljist@gmail.com"><i
+                                    class="far fa-envelope"></i>principaljist@gmail.com</a></p>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-xs-12 segment-two">
+                        <h3>Quick Links</h3>
+                        <hr>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i>AICTE</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i>Grievance Cell</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i>NAAC</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i>Anti Ragging</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-xs-12 segment-three">
+                        <h3>Follow Us</h3>
+                        <hr>
+                        <p>Follow us on social media to stay updated.</p>
+                        <a href="#" class="social-icons"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icons"><i class="fab fa-youtube"></i></a>
+                        <h1>Web Admin :</h1>
+                        <a href="#">prachurjyagogoi123@gmail.com</a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-xs-12 segment-four">
+                        <h3>Feedback</h3>
+                        <hr>
+                        <p>This will help us to develop ourselves.</p>
+                        <form action="feedback" method="POST">
+                            {% csrf_token %}
+                            <label for="name">Name :</label><br>
+                            <input type="text" name="name" placeholder="Name"><br>
+                            <label for="feedback">Feedback :</label><br>
+                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            {% if Data %}
+                            <input type="submit" value="send & logout">
+                            {% else %}
+                            <input type="submit" value="send">
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom-text">All Rights reserved by &copy;Paper Arts Studios(2019)</p>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'js/scroll-nav.js' %}"></script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Student Information Register Form</title>
+  <title>Student Information Show</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -43,14 +43,13 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"> Administration </a>
           <div id="admin" class="dropdown-menu  dropdown-menu-right small-menu1 ">
-              <!-- {% if Data %}
+            <!-- {% if Data %}
               <a href="notice-1/{{Data}}" class="dropdown-item">Notice</a>
               {% else %}
               <a href="notice-2" class="dropdown-item">Notice</a>
               {% endif %} -->
-              <a href="notice-2" class="dropdown-item">Notice</a>
+            <a href="#" class="dropdown-item">Notice</a>
             <a href="#" class="dropdown-item">Board of Governors</a>
-            <a href="#" class="dropdown-item">Office Staff</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -89,16 +88,9 @@
           <div id="facilities" class="dropdown-menu  dropdown-menu-right small-menu2">
             <a href="#" class="dropdown-item">Library</a>
             <a href="#" class="dropdown-item">Hostel</a>
-            <a href="#" class="dropdown-item">Bus</a>
-            <a href="#" class="dropdown-item">Internet</a>
-            <a href="#" class="dropdown-item">Guest House</a>
-            <a href="#" class="dropdown-item">Health Center</a>
-            <a href="#" class="dropdown-item">Image Gallery</a>
-            <a href="#" class="dropdown-item">JIST Women Cell</a>
-            <a href="#" class="dropdown-item">JIST Electronic Hobby Club</a>
           </div>
         </li>
-        {% if Data %}
+        <!-- {% if Data %}
         <li class="nav-item">
           <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
         </li>
@@ -106,7 +98,7 @@
         <li class="nav-item">
           <a href="login" class="nav-link"> Stu-Info </a>
         </li>
-        {% endif %}
+        {% endif %} -->
         {% if name %}
         <li class="nav-item">
           <a href="\" class="nav-link logout-btn"> Logout </a>
@@ -135,47 +127,54 @@
     <div class="row">
       {% for names in name %}
       <div class="col-md-6">
-        <label for="name" class="stu-info-label">First Name : </label>  <label class="stu-info">{{names.first_name}}</label>      
+        <label for="name" class="stu-info-label">First Name : </label> <label
+          class="stu-info">{{names.first_name}}</label>
       </div>
       <div class="col-md-6">
-        <label for="name" class="stu-info-label">Last Name : </label>  <label class="stu-info">{{names.last_name}}</label>       
+        <label for="name" class="stu-info-label">Last Name : </label> <label
+          class="stu-info">{{names.last_name}}</label>
       </div>
       <div class="col-md-6">
-        <label for="name" class="stu-info-label">Gaurdian Name : </label>  <label class="stu-info">{{names.guardian_name}}</label>    
+        <label for="name" class="stu-info-label">Gaurdian Name : </label> <label
+          class="stu-info">{{names.guardian_name}}</label>
       </div>
       <div class="col-md-6">
-        <label for="phone" class="stu-info-label">Phone No : </label>  <label class="stu-info">{{names.phone_no}}</label>       
+        <label for="phone" class="stu-info-label">Phone No : </label> <label class="stu-info">{{names.phone_no}}</label>
       </div>
       <div class="col-md-6">
-        <label for="age" class="stu-info-label">Age : </label>   <label class="stu-info">{{names.age}}</label>              
+        <label for="age" class="stu-info-label">Age : </label> <label class="stu-info">{{names.age}}</label>
       </div>
       <div class="col-md-6">
-        <label for="caste" class="stu-info-label">Caste : </label>  <label class="stu-info">{{names.caste}}</label>          
+        <label for="caste" class="stu-info-label">Caste : </label> <label class="stu-info">{{names.caste}}</label>
       </div>
       <div class="col-md-6">
-        <label for="nationality" class="stu-info-label">Nationality : </label> <label class="stu-info">{{names.nationality}}</label>
+        <label for="nationality" class="stu-info-label">Nationality : </label> <label
+          class="stu-info">{{names.nationality}}</label>
       </div>
       <div class="col-md-6">
-        <label for="gender" class="stu-info-label">Gender : </label>  <label class="stu-info">{{names.gender}}</label>         
+        <label for="gender" class="stu-info-label">Gender : </label> <label class="stu-info">{{names.gender}}</label>
       </div>
       <div class="col-md-12">
-        <label for="address" class="stu-info-label">Address : </label>  <label class="stu-info">{{names.address}}</label>       
+        <label for="address" class="stu-info-label">Address : </label> <label class="stu-info">{{names.address}}</label>
       </div>
-      {% endfor %}
+
     </div>
   </div>
   <div class="container foot">
     <div class="row">
       <div class="col-md-12 foot-status">
-        {% if status %}
-        <label class="status">Your Status : </label> <label class="status-value-app">Details Matching <i class="fas fa-check"></i></label>
-        <label>( Your details submitted to college administration matches. )</label> 
+        {% if names.status %}
+        <label class="status">Your Status : </label> <label class="status-value-app">Details Matching <i
+            class="fas fa-check"></i></label>
+        <label>( Your details submitted to college administration matches. )</label>
         {% else %}
-        <label class="status">Your Status : </label> <label class="status-value-napp">Details Not Matching <i class="fas fa-exclamation"></i></label>
+        <label class="status">Your Status : </label> <label class="status-value-napp">Details Not Matching <i
+            class="fas fa-exclamation"></i></label>
         <label>( Your details submitted to college administration doesn't match. )</label>
-        <p>* This is the default result. Wait 24hr for result updation. If still not matching contact college 
+        <p>* This is the default result. Wait 24hr for result updation. If still not matching contact college
           administration. </p>
         {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
