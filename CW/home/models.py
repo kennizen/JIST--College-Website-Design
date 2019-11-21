@@ -14,6 +14,8 @@ class stuInfo(models.Model):
     phone_no = models.CharField(max_length=12)
     guardian_name = models.CharField( max_length=255)
     caste = models.CharField( max_length=255)
+    dept = models.CharField( max_length=255)
+    sem = models.CharField( max_length=255)
     age = models.CharField( max_length=255)
     nationality = models.CharField( max_length=255)
     gender = models.CharField( max_length=255)

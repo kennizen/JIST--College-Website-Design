@@ -16,4 +16,5 @@ urlpatterns = [
     path('humanities', views.humanities),
     path('maths', views.maths),
     path('etc', views.etc),
+    path('about', views.about),
     ]
