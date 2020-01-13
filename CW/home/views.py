@@ -51,6 +51,7 @@ def stu_info(request,name):
         phone_no =  request.POST['phone_no']
         guardian_name = request.POST['guardian_name']
         caste = request.POST['caste']
+        roll = request.POST['roll']
         dept = request.POST['dept']
         sem = request.POST['sem']
         nationality = request.POST['nationality']
@@ -60,7 +61,7 @@ def stu_info(request,name):
         address = request.POST['address']
 
         stu = stuInfo(first_name = first_name, last_name = last_name, email = email, phone_no = phone_no, guardian_name = guardian_name,
-        caste = caste, nationality = nationality, gender = gender, username = name, age = age, address = address, dept = dept, sem = sem)
+        caste = caste, nationality = nationality, gender = gender, username = name, age = age, address = address, dept = dept, sem = sem, roll = roll)
         stu.save()
         context = stuInfo.objects.all().filter(username = name)
         return render(request,'stu-info-show.html',{'name' : context})
@@ -81,13 +82,9 @@ def feedback(request):
     if request.method == 'POST':
         name = request.POST['name']
         feedback = request.POST['feedback']
-
-        if name == '' and feedback == '':
-            fed = feed(name = 'No Name', feedback = 'No recent Feedback')
-        elif name == '':
+  
+        if name == '':
             fed = feed(name = 'Annonymous', feedback = feedback)
-        elif feedback == '':
-            fed = feed(name = name , feedback = 'No Feedback provided')
         else:
             fed = feed(name = name, feedback = feedback)
 

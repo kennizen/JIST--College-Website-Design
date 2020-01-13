@@ -170,7 +170,8 @@
                         (TU).</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.</label>
                 </p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> headetcjist@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:headetcjist@gmail.com">headetcjist@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9435981115.</label></p>
             </div>
@@ -188,8 +189,9 @@
                 <p><label class="label">Qualification : </label> <label class="label-info">B.E. (GU), M.Tech(GU),
                         Ph.D(pursuing).</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info">
-                        sanyuktachetia@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:sanyuktachetia@gmail.com">sanyuktachetia@gmail.com</a>
+                    </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 7896984578</label></p>
             </div>
@@ -207,8 +209,9 @@
                 <p><label class="label">Qualification : </label> <label class="label-info">B.E. (BPUT),
                         M.Tech.(TU).</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info">
-                        kabita.chaudhury@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:kabita.chaudhury@gmail.com">kabita.chaudhury@gmail.com</a>
+                    </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9864914327.</label></p>
             </div>
@@ -227,7 +230,8 @@
                         M.Tech.(TU).</label>
                 </p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof & HoD</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> daspranjal97@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> <a
+                            href="mailto:daspranjal97@gmail.com">daspranjal97@gmail.com</a></label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9435208804.</label></p>
             </div>
@@ -242,12 +246,12 @@
             </div>
             <div class="col-lg-7 col-md-12 teacher-info">
                 <p><label class="label">Name : </label> <label class="label-info"> Miss Swati Singh.</label></p>
-                <p><label class="label">Qualification : </label> <label class="label-info">B.TECH-ASSAM DON BOSCO
-                        UNIVERSITY, M.Tech (Tezpur University).</label>
+                <p><label class="label">Qualification : </label> <label class="label-info">B.Tech, M.Tech.</label>
                 </p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
                         Prof,(Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> swatidurga99@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:swatidurga99@gmail.com">swatidurga99@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> Not Available.</label></p>
             </div>
@@ -297,12 +301,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -325,6 +329,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

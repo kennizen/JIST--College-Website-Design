@@ -12,7 +12,7 @@
 
 <body>
 
-    <form action="registration" class="login-form" method="POST" onsubmit="return validate()">
+    <form action="registration" class="login-form" method="POST" onsubmit="return validate()" autocomplete="off">
         {% csrf_token %}
         <h1>Create Account</h1>
         <hr>

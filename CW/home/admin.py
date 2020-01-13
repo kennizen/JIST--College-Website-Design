@@ -11,7 +11,7 @@ class userInfoAdmin(admin.ModelAdmin):
 
 
 class stuInfoAdmin(admin.ModelAdmin):
-    list_display = ('username', 'first_name', 'last_name', 'email', 'phone_no', 'guardian_name', 'caste', 'age', 'nationality', 'gender', 'address', 'status')
+    list_display = ('username', 'first_name', 'last_name', 'email', 'phone_no', 'guardian_name','roll','dept','sem', 'caste', 'age', 'nationality', 'gender', 'address', 'status')
 
 
 class feedAdmin(admin.ModelAdmin):

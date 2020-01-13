@@ -193,19 +193,19 @@
             <div class="col-lg-12 text-center about-para">
                 Mission and Vision<br>
 
-                    JIST Vision: At Jorhat Institute of Science and Technology, Jorhat, Assam, we aim to inculcate
-                    Scientific and Technological acumen in aspiring generation of scholars, engineers, researchers and
-                    technocrats by providing quality education in Science and Technology and also envisage
-                    socio-cultural upliftment. JIST thrive for academic excellence, community mobilization, empowerment
-                    of under-privileged sections of the society, upholding local culture and heritage and to nurture the
-                    democratic and national ideals in the youngsters in order to meet the growing competencies and
-                    challenges in their future endeavours.
+                JIST Vision: At Jorhat Institute of Science and Technology, Jorhat, Assam, we aim to inculcate
+                Scientific and Technological acumen in aspiring generation of scholars, engineers, researchers and
+                technocrats by providing quality education in Science and Technology and also envisage
+                socio-cultural upliftment. JIST thrive for academic excellence, community mobilization, empowerment
+                of under-privileged sections of the society, upholding local culture and heritage and to nurture the
+                democratic and national ideals in the youngsters in order to meet the growing competencies and
+                challenges in their future endeavours.
 
-                    JIST Mission: The institute equipped with a vibrant cluster of elite, committed and competent
-                    faculty members and well equipped practical labs, starve relentlessly to provide state-of-art
-                    quality education by bridging the theory-practice gap in Science & Technology. We aim to contribute
-                    to produce a pool of future- ready, well-groomed, value-centric and industry-ready scientific and
-                    technological talents who would thrive to outshine across a wide array of their future functions.
+                JIST Mission: The institute equipped with a vibrant cluster of elite, committed and competent
+                faculty members and well equipped practical labs, starve relentlessly to provide state-of-art
+                quality education by bridging the theory-practice gap in Science & Technology. We aim to contribute
+                to produce a pool of future- ready, well-groomed, value-centric and industry-ready scientific and
+                technological talents who would thrive to outshine across a wide array of their future functions.
 
             </div>
         </div>
@@ -273,7 +273,7 @@
         </div>
     </div>
 
-   
+
 
 
 
@@ -316,12 +316,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -344,6 +344,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

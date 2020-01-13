@@ -27,24 +27,24 @@
         <h2>Student Registration</h2>
         <hr>
         <div class="container form-con">
-            <form action="{{name}}" method="POST" onsubmit="return validate()">
+            <form action="{{name}}" method="POST" onsubmit="return validate()" autocomplete="off">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-box">
-                            <input type="text" name="first_name" required>
+                            <input type="text" id="fname" name="first_name" required>
                             <label for="">First Name</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="input-box">
-                            <input type="text" name="last_name" required>
+                            <input type="text" id="lname" name="last_name" required>
                             <label for="">Last Name</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="input-box">
-                            <input type="text" name="guardian_name" required>
+                            <input type="text" id="gname" name="guardian_name" required>
                             <label for="">Guardian Name</label>
                         </div>
                     </div>
@@ -71,7 +71,15 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 dept">
+                    <div class="col-md-4">
+                        <div class="input-box">
+                            <input type="number" id="roll" name="roll" required>
+                            <label for="">Roll No. ( Enter recent )</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 dept">
                         <div class="input-box-dept">
                             <select class="mdb-select md-form" name="dept" required>
                                 <option value="" disabled selected>Department</option>
@@ -91,7 +99,7 @@
                     </div>
 
 
-                    <div class="col-md-6 sem">
+                    <div class="col-md-4 sem">
                         <div class="input-box-sem">
                             <select class="mdb-select md-form" name="sem" required>
                                 <option value="" disabled selected>Semester</option>
@@ -120,7 +128,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="input-box">
-                            <input type="text" name="nationality" required>
+                            <input type="text" id="nl" name="nationality" required>
                             <label for="">Nationality</label>
                         </div>
                     </div>
@@ -142,7 +150,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="input-box">
-                            <input type="text" name="address" required>
+                            <input type="text" id="add" name="address" required>
                             <label for="">Address</label>
                         </div>
                     </div>

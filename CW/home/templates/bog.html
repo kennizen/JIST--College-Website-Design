@@ -260,12 +260,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -288,6 +288,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

@@ -160,7 +160,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> M.A.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof. & HoD.</label>
                 </p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> barnalibhuyan7@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:barnalibhuyan7@gmail.com">barnalibhuyan7@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9864950436.</label></p>
             </div>
@@ -178,7 +179,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info">M.A., M.Phil.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
                         Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> nabajist1974@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:nabajist1974@gmail.com">nabajist1974@gmail.com</a></label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9954684516</label></p>
             </div>
@@ -196,7 +198,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> M.Com., PhD.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
                         Contractual).</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> tukujyoti125@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:tukujyoti125@gmail.com">tukujyoti125@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9435350559.</label></p>
             </div>
@@ -244,12 +247,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -272,6 +275,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

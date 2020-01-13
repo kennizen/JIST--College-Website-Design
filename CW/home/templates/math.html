@@ -175,7 +175,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> M.Sc. Ph.D.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof. & HoD.</label>
                 </p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> raphelsaikia@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:raphelsaikia@gmail.com">raphelsaikia@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9954479918.</label></p>
             </div>
@@ -192,8 +193,9 @@
                 <p><label class="label">Name : </label> <label class="label-info"> Dr. Chandra Chutia.</label></p>
                 <p><label class="label">Qualification : </label> <label class="label-info">M.Sc. Ph.D.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info">
-                        chutia_chandra12@rediffmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:chutia_chandra12@rediffmail.com">chutia_chandra12@rediffmail.com</a>
+                    </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9957032624</label></p>
             </div>
@@ -210,7 +212,8 @@
                 <p><label class="label">Name : </label> <label class="label-info"> Dr. Pratibha Borah.</label></p>
                 <p><label class="label">Qualification : </label> <label class="label-info">M.Sc. Ph.D.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> pratibhaborah@yahoo.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:pratibhaborah@yahoo.com">pratibhaborah@yahoo.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9854021819.</label></p>
             </div>
@@ -229,7 +232,8 @@
                 </p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof,(Permanent
                         Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> manojbora08@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:manojbora08@gmail.com">manojbora08@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9854681015.</label></p>
             </div>
@@ -248,7 +252,8 @@
                 </p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
                         Prof,(Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> utpal_no1@rediffmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:utpal_no1@rediffmail.com">utpal_no1@rediffmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 8761977801.</label></p>
             </div>
@@ -266,7 +271,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info">M.Sc.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
                         Prof,(Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> geetamunu@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:geetamunu@gmail.com">geetamunu@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 8638919559.</label></p>
             </div>
@@ -314,12 +320,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -342,6 +348,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

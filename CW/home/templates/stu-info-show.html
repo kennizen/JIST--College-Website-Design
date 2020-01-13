@@ -90,15 +90,11 @@
             <a href="#" class="dropdown-item">Hostel</a>
           </div>
         </li>
-        <!-- {% if Data %}
+
         <li class="nav-item">
-          <a href="stuinfo/{{Data}}" class="nav-link"> Stu-Info </a>
+          <a href="#" class="nav-link"> Stu-Info </a>
         </li>
-        {% else %}
-        <li class="nav-item">
-          <a href="login" class="nav-link"> Stu-Info </a>
-        </li>
-        {% endif %} -->
+
         {% if name %}
         <li class="nav-item">
           <a href="\" class="nav-link logout-btn"> Logout </a>
@@ -145,6 +141,9 @@
         <label for="age" class="stu-info-label">Age : </label> <label class="stu-info">{{names.age}}</label>
       </div>
       <div class="col-md-6">
+        <label for="age" class="stu-info-label">Roll No : </label> <label class="stu-info">{{names.roll}}</label>
+      </div>
+      <div class="col-md-6">
         <label for="dept" class="stu-info-label">Department : </label> <label class="stu-info">{{names.dept}}</label>
       </div>
       <div class="col-md-6">
@@ -159,6 +158,9 @@
       </div>
       <div class="col-md-6">
         <label for="gender" class="stu-info-label">Gender : </label> <label class="stu-info">{{names.gender}}</label>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="stu-info-label">Email-Id : </label> <label class="stu-info">{{names.email}}</label>
       </div>
       <div class="col-md-12">
         <label for="address" class="stu-info-label">Address : </label> <label class="stu-info">{{names.address}}</label>
@@ -222,13 +224,13 @@
             <h3>Feedback</h3>
             <hr>
             <p>This will help us to develop ourselves.</p>
-            <form action="feedback" method="POST">
+            <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
               {% csrf_token %}
               <label for="name">Name :</label><br>
-              <input type="text" name="name" placeholder="Name"><br>
+              <input type="text" id="fname" name="name" placeholder="Name"><br>
               <label for="feedback">Feedback :</label><br>
-              <input type="text" name="feedback" placeholder="Your Feedback"><br>
-              {% if name %}
+              <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
+              {% if Data %}
               <input type="submit" value="send & logout">
               {% else %}
               <input type="submit" value="send">
@@ -246,6 +248,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="{% static 'js/scroll-nav.js' %}"></script>
+  <script src="{% static 'js/feed.js' %}"></script>
 </body>
 
 </html>

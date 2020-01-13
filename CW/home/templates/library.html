@@ -178,7 +178,8 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> M. LISc.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Librarian.</label>
                 </p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> mousumimudoi1@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:mousumimudoi1@gmail.com">mousumimudoi1@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 7399770841.</label></p>
             </div>
@@ -213,7 +214,8 @@
                 <p><label class="label">Name : </label> <label class="label-info"> Mrs. Rajkanya Gogoi.</label></p>
                 <p><label class="label">Qualification : </label> <label class="label-info"> Not Available.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Library Assistant.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> rajkanyagogoi43@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:rajkanyagogoi43@gmail.com">rajkanyagogoi43@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 8638936852.</label></p>
             </div>
@@ -230,8 +232,9 @@
                 <p><label class="label">Name : </label> <label class="label-info"> Mr. Sandipan Patra.</label></p>
                 <p><label class="label">Qualification : </label> <label class="label-info"> Not Available.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Library Assistant.</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info">
-                        Sandipanpatra1000@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a
+                            href="mailto:Sandipanpatra1000@gmail.com"> Sandipanpatra1000@gmail.com</a>
+                    </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9678026244.</label></p>
             </div>
@@ -294,12 +297,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -322,6 +325,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
+    <script src="{% static 'js/feed.js' %}"></script>
 
 </body>
 

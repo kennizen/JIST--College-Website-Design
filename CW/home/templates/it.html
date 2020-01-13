@@ -161,7 +161,7 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof. & HoD.</label>
                 </p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> jameson.mush@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a href="mailto:jameson.mush@gmail.com">jameson.mush@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9954166745 (m).</label></p>
             </div>
@@ -179,7 +179,7 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> M.Sc., MPhil.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
                         Contractual)</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> bobitaduttajrt@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"><a href="mailto:bobitaduttajrt@gmail.com">bobitaduttajrt@gmail.com</a></label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9085066999</label></p>
             </div>
@@ -197,7 +197,7 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt. Prof.(Permanent
                         Contractual).</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> rajivjec@gmail.com</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> <a href="mailto:rajivjec@gmail.com">rajivjec@gmail.com</a> </label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 9957212166.</label></p>
             </div>
@@ -215,7 +215,7 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> MCA.</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
                         Prof.(Contractual).</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> NULL</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> Not Available</label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 8876434892.</label></p>
             </div>
@@ -233,7 +233,7 @@
                 <p><label class="label">Qualification : </label> <label class="label-info"> MSc (IT).</label></p>
                 <p><label class="label">Designation : </label> <label class="label-info"> Asstt.
                         Prof.(Contractual).</label></p>
-                <p><label class="label">Email-Id : </label> <label class="label-info"> NULL</label>
+                <p><label class="label">Email-Id : </label> <label class="label-info"> Not Available</label>
                 </p>
                 <p><label class="label">Contact Number : </label> <label class="label-info"> 7002779452</label></p>
             </div>
@@ -279,12 +279,12 @@
                         <h3>Feedback</h3>
                         <hr>
                         <p>This will help us to develop ourselves.</p>
-                        <form action="feedback" method="POST">
+                        <form action="feedback" method="POST" onsubmit="return validate()" autocomplete="off">
                             {% csrf_token %}
                             <label for="name">Name :</label><br>
-                            <input type="text" name="name" placeholder="Name"><br>
+                            <input type="text" id="fname" name="name" placeholder="Name"><br>
                             <label for="feedback">Feedback :</label><br>
-                            <input type="text" name="feedback" placeholder="Your Feedback"><br>
+                            <input type="text" id="feedback" name="feedback" placeholder="Your Feedback"><br>
                             {% if Data %}
                             <input type="submit" value="send & logout">
                             {% else %}
@@ -307,7 +307,7 @@
         AOS.init();
     </script>
     <script src="{% static 'js/scroll-nav.js' %}"></script>
-
+    <script src="{% static 'js/feed.js' %}"></script>
 </body>
 
 </html>
